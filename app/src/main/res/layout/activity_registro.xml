@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registro">
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="340dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="Email"
+        app:layout_constraintStart_toStartOf="@+id/apellido"
+        app:layout_constraintTop_toBottomOf="@+id/apellido" />
+
+    <EditText
+        android:id="@+id/apellido"
+        android:layout_width="340dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Apellido"
+        app:layout_constraintStart_toStartOf="@+id/nombre"
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="340dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginBottom="172dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Nombre"
+        app:layout_constraintBottom_toTopOf="@+id/inscripcion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/inscripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="119dp"
+        android:text="Inscribirse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+</android.support.constraint.ConstraintLayout>
