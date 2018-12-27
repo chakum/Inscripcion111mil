@@ -4,52 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registro">
+    tools:context=".Registro"
+    tools:layout_editor_absoluteY="81dp">
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="340dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="358dp"
+        android:layout_height="39dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="Email"
-        app:layout_constraintStart_toStartOf="@+id/apellido"
-        app:layout_constraintTop_toBottomOf="@+id/apellido" />
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="221dp" />
 
     <EditText
         android:id="@+id/apellido"
-        android:layout_width="340dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="358dp"
+        android:layout_height="39dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Apellido"
-        app:layout_constraintStart_toStartOf="@+id/nombre"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="159dp" />
 
     <EditText
         android:id="@+id/nombre"
-        android:layout_width="340dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="131dp"
-        android:layout_marginBottom="172dp"
+        android:layout_width="358dp"
+        android:layout_height="39dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Nombre"
-        app:layout_constraintBottom_toTopOf="@+id/inscripcion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="99dp" />
 
     <Button
         android:id="@+id/inscripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="119dp"
         android:text="Inscribirse"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="399dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:text="Inscripcion"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="41dp" />
+
+    <Spinner
+        android:id="@+id/escuela"
+        android:layout_width="358dp"
+        android:layout_height="39dp"
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="275dp"></Spinner>
+
 </android.support.constraint.ConstraintLayout>
