@@ -48,7 +48,6 @@ public class Registro extends AppCompatActivity {
         email = (EditText)findViewById(R.id.email);
         inscripcion = (Button)findViewById(R.id.inscripcion);
         requestQueue = Volley.newRequestQueue(this);
-
         inscripcion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,12 +95,12 @@ public class Registro extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+                Toast.makeText(Registro.this, "Se ha inscrito satisfactoriamente", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(Registro.this, "Ocurrio un error al inscribirse", Toast.LENGTH_SHORT).show();
             }
         }) {
             protected Map<String, String> getParams() throws AuthFailureError {
@@ -109,7 +108,9 @@ public class Registro extends AppCompatActivity {
                 map.put("nombre", nombre.getText().toString());
                 map.put("apellido", apellido.getText().toString());
                 map.put("email", email.getText().toString());
+                map.put("provincia", escuela.getSelectedItem().toString());
                 return map;
+
             }
         };
         requestQueue.add(request);
