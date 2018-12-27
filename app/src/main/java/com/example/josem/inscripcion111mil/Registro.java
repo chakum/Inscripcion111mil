@@ -22,42 +22,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.loopj.android.http.*;
+
+import org.json.JSONArray;
+
+import cz.msebera.android.httpclient.Header;
+
 public class Registro extends AppCompatActivity {
     EditText nombre, apellido, email;
     Button inscripcion;
     RequestQueue requestQueue;
+    private AsyncHttpClient cliente;
     private Spinner escuela;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
+        cliente = new AsyncHttpClient();
         escuela = (Spinner)findViewById(R.id.escuela);
-
-        ArrayList<String> escuelas = new ArrayList<>();
-
-        escuelas.add("Buenos Aires");
-        escuelas.add("Santa Fe");
-        escuelas.add("Mendoza");
-
-
-        ArrayAdapter adp = new ArrayAdapter(Registro.this, android.R.layout.simple_spinner_dropdown_item, escuelas);
-
-        escuela.setAdapter(adp);
-        escuela.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String elemento = (String) escuela.getAdapter().getItem(position);
-
-                Toast.makeText(Registro.this,"Seleccionaste: " + elemento, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
+        llenarSpinner();
 
         nombre = (EditText)findViewById(R.id.nombre);
         apellido = (EditText)findViewById(R.id.apellido);
@@ -72,6 +56,39 @@ public class Registro extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void llenarSpinner() {
+        String url = "https://hair-trigger-hinges.000webhostapp.com/conexion/getCategoria.php";
+        cliente.post(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if (statusCode == 200) {
+                    cargarSpinner(new String(responseBody));
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+    }
+
+    private void cargarSpinner (String respuesta) {
+        ArrayList<Escuela> lista = new ArrayList<Escuela>();
+        try {
+            JSONArray jsonArreglo = new JSONArray(respuesta);
+            for (int i = 0; i < jsonArreglo.length(); i++) {
+                Escuela e = new Escuela();
+                e.setNombre((jsonArreglo.getJSONObject(i).getString("nombre")));
+                lista.add(e);
+            }
+            ArrayAdapter<Escuela> a = new ArrayAdapter<Escuela> (this, android.R.layout.simple_dropdown_item_1line, lista);
+            escuela.setAdapter(a);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void enviarDatos() {
