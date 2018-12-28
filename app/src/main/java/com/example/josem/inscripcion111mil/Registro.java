@@ -52,6 +52,9 @@ public class Registro extends AppCompatActivity {
         telefono = (EditText)findViewById(R.id.telefono);
         calle = (EditText)findViewById(R.id.calle);
         numero = (EditText)findViewById(R.id.numero);
+        dia = (EditText)findViewById(R.id.dia);
+        mes = (EditText)findViewById(R.id.mes);
+        ano = (EditText)findViewById(R.id.ano);
 
 
         inscripcion = (Button)findViewById(R.id.inscripcion);
@@ -126,9 +129,9 @@ public class Registro extends AppCompatActivity {
                 map.put("provincia", escuela.getSelectedItem().toString());
                 map.put("documento", dni.getText().toString());
                 map.put("cuil", cuil.getText().toString());
-                /*map.put("dia", dni.getText().toString());
+                map.put("dia", dia.getText().toString());
                 map.put("mes", mes.getText().toString());
-                map.put("ano", ano.getText().toString());*/
+                map.put("ano", ano.getText().toString());
                 map.put("telefono", telefono.getText().toString());
                 map.put("calle", calle.getText().toString());
                 map.put("numero", numero.getText().toString());

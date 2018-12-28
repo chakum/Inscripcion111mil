@@ -17,16 +17,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:text="Preinscripción al Plan 111 Mil"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                android:gravity="center"
-                android:textSize="18sp"
-                tools:layout_editor_absoluteX="44dp"
-                tools:layout_editor_absoluteY="41dp" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="146dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/logoderutapreinsc" />
 
             <EditText
                 android:id="@+id/apellido"
@@ -57,6 +53,7 @@
                 android:layout_width="358dp"
                 android:layout_height="40dp"
                 android:ems="10"
+                android:maxLength="8"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:hint="DNI"
@@ -71,7 +68,8 @@
                 android:ems="10"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:hint="CUIL"
+                android:hint="CUIL (no incluir guiones)"
+                android:maxLength="11"
                 android:inputType="textPersonName"
                 tools:layout_editor_absoluteX="13dp"
                 tools:layout_editor_absoluteY="110dp" />
@@ -83,6 +81,7 @@
                     android:id="@+id/dia"
                     android:layout_width="40dp"
                     android:gravity="center"
+                    android:maxLength="2"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
@@ -91,6 +90,7 @@
                     android:id="@+id/mes"
                     android:layout_width="40dp"
                     android:gravity="center"
+                    android:maxLength="2"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:ems="10"
@@ -100,6 +100,7 @@
                     android:id="@+id/ano"
                     android:layout_width="40dp"
                     android:gravity="center"
+                    android:maxLength="2"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:ems="10"
@@ -165,12 +166,14 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <Button
                     android:id="@+id/inscripcion"
-                    android:layout_width="wrap_content"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Inscribirse"
                     android:layout_centerInParent="true"
+                    android:text="Inscribirse"
                     tools:layout_editor_absoluteX="140dp"
                     tools:layout_editor_absoluteY="399dp" />
             </RelativeLayout>
