@@ -29,7 +29,7 @@ import org.json.JSONArray;
 import cz.msebera.android.httpclient.Header;
 
 public class Registro extends AppCompatActivity {
-    EditText nombre, apellido, email;
+    EditText nombre, apellido, email, dni, cuil, dia, mes, ano, telefono, calle, numero;
     Button inscripcion;
     RequestQueue requestQueue;
     private AsyncHttpClient cliente;
@@ -46,6 +46,13 @@ public class Registro extends AppCompatActivity {
         nombre = (EditText)findViewById(R.id.nombre);
         apellido = (EditText)findViewById(R.id.apellido);
         email = (EditText)findViewById(R.id.email);
+        dni = (EditText)findViewById(R.id.dni);
+        cuil = (EditText)findViewById(R.id.cuil);
+        telefono = (EditText)findViewById(R.id.telefono);
+        calle = (EditText)findViewById(R.id.calle);
+        numero = (EditText)findViewById(R.id.numero);
+
+
         inscripcion = (Button)findViewById(R.id.inscripcion);
         requestQueue = Volley.newRequestQueue(this);
         inscripcion.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +116,16 @@ public class Registro extends AppCompatActivity {
                 map.put("apellido", apellido.getText().toString());
                 map.put("email", email.getText().toString());
                 map.put("provincia", escuela.getSelectedItem().toString());
+                map.put("documento", dni.getText().toString());
+                map.put("cuil", cuil.getText().toString());
+                /*map.put("dia", dni.getText().toString());
+                map.put("mes", mes.getText().toString());
+                map.put("ano", ano.getText().toString());*/
+                map.put("telefono", telefono.getText().toString());
+                map.put("calle", calle.getText().toString());
+                map.put("numero", numero.getText().toString());
+
+
                 return map;
 
             }

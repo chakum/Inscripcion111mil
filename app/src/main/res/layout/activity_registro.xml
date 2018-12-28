@@ -7,98 +7,173 @@
     tools:context=".Registro"
     tools:layout_editor_absoluteY="81dp">
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginBottom="15dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/escuela"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apellido" />
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="384dp"
+        android:layout_height="511dp">
 
-    <EditText
-        android:id="@+id/apellido"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginBottom="23dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Apellido"
-        app:layout_constraintBottom_toTopOf="@+id/email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/nombre"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginBottom="21dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Nombre"
-        app:layout_constraintBottom_toTopOf="@+id/apellido"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Preinscripción al Plan 111 Mil"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:gravity="center"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="44dp"
+                tools:layout_editor_absoluteY="41dp" />
 
-    <Button
-        android:id="@+id/inscripcion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:text="Inscribirse"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/escuela" />
+            <EditText
+                android:id="@+id/apellido"
+                android:layout_width="358dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="Apellido"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="167dp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="41dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:layout_marginBottom="32dp"
-        android:text="Preinscripción al Plan 111 Mil"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/nombre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/nombre"
+                android:layout_width="358dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Nombre"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="110dp" />
 
-    <Spinner
-        android:id="@+id/escuela"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginBottom="85dp"
-        app:layout_constraintBottom_toTopOf="@+id/inscripcion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"></Spinner>
+            <EditText
+                android:id="@+id/dni"
+                android:layout_width="358dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Documento"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="110dp" />
+
+            <EditText
+                android:id="@+id/cuil"
+                android:layout_width="358dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="CUIL"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="110dp" />
+
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/dia"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="dd" />
+                <EditText
+                    android:id="@+id/mes"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="mm" />
+                <EditText
+                    android:id="@+id/ano"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="aa" />
+            </RelativeLayout>
+
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="358dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="227dp" />
+            <EditText
+                android:id="@+id/telefono"
+                android:layout_width="358dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Telefono"
+                android:inputType="textEmailAddress"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="227dp" />
+            <EditText
+                android:id="@+id/calle"
+                android:layout_width="358dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Calle"
+                android:inputType="textEmailAddress"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="227dp" />
+            <EditText
+                android:id="@+id/numero"
+                android:layout_width="358dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Numero"
+                android:inputType="textEmailAddress"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="227dp" />
+
+            <Spinner
+                android:id="@+id/escuela"
+                android:layout_width="358dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="278dp"></Spinner>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/inscripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inscribirse"
+                    android:layout_centerInParent="true"
+                    tools:layout_editor_absoluteX="140dp"
+                    tools:layout_editor_absoluteY="399dp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
