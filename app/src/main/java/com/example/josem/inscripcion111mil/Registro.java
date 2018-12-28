@@ -55,10 +55,17 @@ public class Registro extends AppCompatActivity {
 
         inscripcion = (Button)findViewById(R.id.inscripcion);
         requestQueue = Volley.newRequestQueue(this);
+
         inscripcion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                enviarDatos();
+                if (nombre.getText().toString().equals("") || apellido.getText().toString().equals("") || email.getText().toString().equals("") || dni.getText().toString().equals("") || cuil.getText().toString().equals("") || telefono.getText().toString().equals("") || calle.getText().toString().equals("") || numero.getText().toString().equals("")) {
+                    Toast.makeText(Registro.this, "Faltan llenar campos", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    enviarDatos();
+                }
+
             }
         });
 
@@ -124,8 +131,6 @@ public class Registro extends AppCompatActivity {
                 map.put("telefono", telefono.getText().toString());
                 map.put("calle", calle.getText().toString());
                 map.put("numero", numero.getText().toString());
-
-
                 return map;
 
             }
