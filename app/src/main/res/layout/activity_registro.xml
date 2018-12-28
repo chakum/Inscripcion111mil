@@ -59,7 +59,7 @@
                 android:ems="10"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Documento"
+                android:hint="DNI"
                 android:inputType="textPersonName"
                 tools:layout_editor_absoluteX="13dp"
                 tools:layout_editor_absoluteY="110dp" />
@@ -82,26 +82,29 @@
                 <EditText
                     android:id="@+id/dia"
                     android:layout_width="40dp"
+                    android:gravity="center"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="dd" />
+                    android:hint="DD" />
                 <EditText
                     android:id="@+id/mes"
                     android:layout_width="40dp"
+                    android:gravity="center"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="mm" />
+                    android:hint="MM" />
                 <EditText
                     android:id="@+id/ano"
                     android:layout_width="40dp"
+                    android:gravity="center"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:hint="aa" />
+                    android:hint="AA" />
             </RelativeLayout>
 
 
@@ -112,7 +115,7 @@
                 android:ems="10"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Email"
+                android:hint="Correo electrónico"
                 android:inputType="textEmailAddress"
                 tools:layout_editor_absoluteX="13dp"
                 tools:layout_editor_absoluteY="227dp" />
@@ -123,7 +126,7 @@
                 android:ems="10"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Telefono"
+                android:hint="Teléfono"
                 android:inputType="textEmailAddress"
                 tools:layout_editor_absoluteX="13dp"
                 tools:layout_editor_absoluteY="227dp" />
@@ -158,7 +161,6 @@
                 android:layout_marginBottom="10dp"
                 tools:layout_editor_absoluteX="13dp"
                 tools:layout_editor_absoluteY="278dp"></Spinner>
-
 
             <RelativeLayout
                 android:layout_width="match_parent"
